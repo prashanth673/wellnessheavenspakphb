@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GK7WPJ8SRY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-GK7WPJ8SRY');
-  gtag('config', 'AW-18398511012');
-</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wellness Heaven Spa - KPHB | Best Spa in KPHB Kukatpally Hyderabad</title>
@@ -78,7 +68,10 @@
     }
 
     body {
-      background-color: var(--bg-dark);
+      background:
+        radial-gradient(circle at top, rgba(212, 175, 55, 0.12), transparent 25%),
+        radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.1), transparent 30%),
+        var(--bg-dark);
       color: var(--text-white);
       line-height: 1.6;
       overflow-x: hidden;
@@ -155,11 +148,30 @@
     /* Hero Section with Logo */
     .hero {
       position: relative;
+      overflow: hidden;
       padding: 5rem 6% 4.5rem;
       text-align: center;
-      background: linear-gradient(180deg, rgba(6, 14, 10, 0.88) 0%, rgba(6, 14, 10, 0.98) 100%), 
-                  url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1600&q=80') center/cover no-repeat;
+      background:
+        linear-gradient(135deg, rgba(6, 14, 10, 0.70), rgba(6, 14, 10, 0.72)),
+        url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       border-bottom: 1px solid var(--border-gold);
+      box-shadow: inset 0 0 30px rgba(212, 175, 55, 0.12);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.18), transparent 25%),
+        radial-gradient(circle at 80% 15%, rgba(14, 165, 233, 0.08), transparent 25%),
+        linear-gradient(180deg, rgba(6, 14, 10, 0.12), rgba(6, 14, 10, 0.42));
+      pointer-events: none;
+    }
+
+    .hero > * {
+      position: relative;
+      z-index: 1;
     }
 
     .hero-center-logo {
@@ -172,6 +184,18 @@
       background: #000;
       object-fit: cover;
       animation: pulse 4s infinite ease-in-out;
+    }
+
+    .hero-visual {
+      display: block;
+      width: min(330px, 72vw);
+      height: 195px;
+      margin: 0 auto 1.5rem;
+      border-radius: 22px;
+      object-fit: cover;
+      border: 2px solid rgba(212, 175, 55, 0.7);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45), 0 0 20px rgba(212, 175, 55, 0.2);
+      background: #111;
     }
 
     @keyframes pulse {
@@ -218,6 +242,8 @@
       justify-content: center;
       gap: 18px;
       flex-wrap: wrap;
+      max-width: 980px;
+      margin: 0 auto;
     }
 
     .btn-hero {
@@ -228,8 +254,10 @@
       text-decoration: none;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
       transition: all 0.3s ease;
+      min-width: 220px;
     }
 
     .btn-hero-call {
@@ -242,6 +270,12 @@
       background: #25D366;
       color: #ffffff;
       box-shadow: 0 6px 25px rgba(37, 211, 102, 0.35);
+    }
+
+    .btn-hero-direction {
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: #ffffff;
+      box-shadow: 0 6px 25px rgba(14, 165, 233, 0.35);
     }
 
     .btn-hero:hover {
@@ -500,7 +534,7 @@
     @media (max-width: 768px) {
       .mobile-bar {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
         position: fixed;
         bottom: 0;
         left: 0;
@@ -525,6 +559,20 @@
 
       .mobile-btn-wa {
         background: #25D366;
+        color: #ffffff;
+        padding: 15px;
+        text-align: center;
+        font-weight: 800;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-size: 0.95rem;
+      }
+
+      .mobile-btn-direction {
+        background: linear-gradient(135deg, #38bdf8, #0ea5e9);
         color: #ffffff;
         padding: 15px;
         text-align: center;
@@ -587,11 +635,11 @@
     <img src="logo.png" onerror="this.src='Logo.png'" alt="Wellness Heaven Spa KPHB" class="hero-center-logo">
     <br>
     <div class="offer-pill">
-      <i class="fa-solid fa-sparkles"></i> Inaugural Offer: Packages Starting @ ₹999/-
+      <i class="fa-solid fa-sparkles"></i> Launch Offer: Premium Spa Packages Starting at ₹999/-
     </div>
     <h1>WELLNESS HEAVEN SPA - KPHB</h1>
     <p class="hero-subtext">
-      Hyderabad’s premier sanctuary for authentic body massages and stress relief in KPHB Colony, Kukatpally. Located 2 minutes from KPHB Metro Station.
+      Hyderabad’s premier sanctuary for authentic body massages and stress relief in Bhagya Nagar Colony KPHB, Kukatpally. Located 2 minutes from KPHB Metro Station.
     </p>
     <div class="hero-cta-group">
       <a href="tel:+916303995196" class="btn-hero btn-hero-call">
@@ -599,6 +647,9 @@
       </a>
       <a href="https://wa.me/916303995196?text=Hi%20Wellness%20Heaven%20Spa%20KPHB,%20I%20would%20like%20to%20book%20an%20appointment." class="btn-hero btn-hero-wa" target="_blank">
         <i class="fa-brands fa-whatsapp"></i> WhatsApp Booking
+      </a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=17.4940051,78.4026825" class="btn-hero btn-hero-direction" target="_blank">
+        <i class="fa-solid fa-location-dot"></i> Get Directions
       </a>
     </div>
   </header>
@@ -738,7 +789,7 @@
         <div class="ambience-tag"><i class="fa-solid fa-spa"></i> Premium Herbal Oils</div>
       </div>
       <div class="ambience-card">
-        <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=800&q=80" alt="Spa Ambience">
+        <img src="counter.png" alt="100% Sanitized & Clean">
         <div class="ambience-tag"><i class="fa-solid fa-gem"></i> 100% Sanitized & Clean</div>
       </div>
     </div>
@@ -792,8 +843,9 @@
 
   <!-- Sticky Mobile Action Buttons -->
   <div class="mobile-bar">
-    <a href="tel:+916303995196" class="mobile-btn-call"><i class="fa-solid fa-phone"></i> Call Now</a>
+    <a href="tel:+916303995196" class="mobile-btn-call"><i class="fa-solid fa-phone"></i> Call</a>
     <a href="https://wa.me/916303995196?text=Hi,%20I%20want%20to%20know%20more%20about%20spa%20services" class="mobile-btn-wa" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    <a href="https://www.google.com/maps/dir/?api=1&destination=17.4940051,78.4026825" class="mobile-btn-direction" target="_blank"><i class="fa-solid fa-location-dot"></i> Directions</a>
   </div>
 
   <!-- Footer -->
